@@ -12,9 +12,9 @@ const Home = () => {
   const [allPosts, setAllPosts] = useState([]);
   const loaderRef = useRef(null);
 
-  const { data, loading, error } = useFetch(
-    `https://dummyjson.com/posts?limit=${LIMIT}&skip=${skip}`
-  );
+  //const { data, loading, error } = useFetch(
+  //  `https://dummyjson.com/posts?limit=${LIMIT}&skip=${skip}` 
+  //);
 
   useEffect(() => {
     if (data?.posts) {
