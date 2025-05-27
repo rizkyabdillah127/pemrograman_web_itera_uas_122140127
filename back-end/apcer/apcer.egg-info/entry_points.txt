@@ -1,0 +1,5 @@
+[console_scripts]
+initialize_apcer_db = apcer.scripts.initialize_db:main
+
+[paste.app_factory]
+main = apcer:main

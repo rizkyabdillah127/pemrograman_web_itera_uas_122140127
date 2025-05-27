@@ -1,0 +1,83 @@
+Metadata-Version: 2.4
+Name: apcer
+Version: 0.0
+Summary: apcer
+Home-page: 
+Author: 
+Author-email: 
+Keywords: web pyramid pylons
+Classifier: Programming Language :: Python
+Classifier: Framework :: Pyramid
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Requires-Dist: alembic
+Requires-Dist: plaster_pastedeploy
+Requires-Dist: pyramid>=1.9
+Requires-Dist: pyramid_debugtoolbar
+Requires-Dist: pyramid_jinja2
+Requires-Dist: pyramid_retry
+Requires-Dist: pyramid_tm
+Requires-Dist: SQLAlchemy
+Requires-Dist: transaction
+Requires-Dist: zope.sqlalchemy
+Requires-Dist: waitress
+Provides-Extra: testing
+Requires-Dist: WebTest>=1.3.1; extra == "testing"
+Requires-Dist: pytest>=3.7.4; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+Dynamic: classifier
+Dynamic: description
+Dynamic: keywords
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+apcer
+=====
+
+Getting Started
+---------------
+
+- Change directory into your newly created project.
+
+    cd apcer
+
+- Create a Python virtual environment.
+
+    python3 -m venv env
+
+- Upgrade packaging tools.
+
+    env/bin/pip install --upgrade pip setuptools
+
+- Install the project in editable mode with its testing requirements.
+
+    env/bin/pip install -e ".[testing]"
+
+- Initialize and upgrade the database using Alembic.
+
+    - Generate your first revision.
+
+        env/bin/alembic -c development.ini revision --autogenerate -m "init"
+
+    - Upgrade to that revision.
+
+        env/bin/alembic -c development.ini upgrade head
+
+- Load default data into the database using a script.
+
+    env/bin/initialize_apcer_db development.ini
+
+- Run your project's tests.
+
+    env/bin/pytest
+
+- Run your project.
+
+    env/bin/pserve development.ini
+
+
+0.0
+---
+
+- Initial version.
